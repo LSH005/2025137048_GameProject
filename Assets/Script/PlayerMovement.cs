@@ -12,11 +12,14 @@ public class PlayerMovement : MonoBehaviour
     public int coinCount = 0; // 코인 갯수
     public int totalCoins = 5; //요구하는 코인 갯수
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
+
 
     // Update is called once per frame
     void Update()
