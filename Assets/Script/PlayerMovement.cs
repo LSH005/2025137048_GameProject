@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -53,5 +54,19 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Door")&& coinCount >= totalCoins){
             Debug.Log("게임 클리어"); // 이후 종료 연출 및 Scene 전환
         }
+        if (other.CompareTag("Misslie"))
+        {
+            GameOver();
+        }
+    }
+
+    public void GameOver()
+    {
+        gameObject.SetActive(false);
+        Invoke("RestartGame", 3.0f);
+    }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
