@@ -190,9 +190,11 @@ public class PlayerMovement : MonoBehaviour
     void EnableGlider()
     {
         isGliding = true;
+        //Debug.Log("WORKED 1");
         if (gliderObject != null)
         {
             gliderObject.SetActive(true);
+            //Debug.Log("WORKED 2");
         }
         rb.velocity = new Vector3(rb.velocity.x, -gliderFallSpeed, rb.velocity.z);
     }
